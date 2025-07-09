@@ -31,3 +31,24 @@ class FoodSerializer(serializers.ModelSerializer):
         model = Food
         fields = '__all__'
     
+
+class TableSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Table
+        fields = '__all__'
+        
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'
+    
+class OrderItemSerializer(serializers.Serializer):
+    class Meta:
+        model = OrderItem
+        fields = '__all__'
+
+class AdminDashboardSerializer(serializers.Serializer):
+    total_users = serializers.IntegerField()
+    total_orders = serializers.IntegerField()
+    total_revenue = serializers.DecimalField(max_digits=10, decimal_places=2)
+        
